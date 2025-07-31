@@ -1,4 +1,6 @@
 <?php
+require_once get_template_directory() . "/inc/themex-styler.php";
+require_once get_template_directory() . "/inc/themex-user.php";
 function newtheme_setup() {
     load_theme_textdomain( 'new-theme', get_template_directory() . '/languages' );
     add_theme_support( 'title-tag' );
