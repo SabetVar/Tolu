@@ -6,6 +6,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class('bg-bg text-text'); ?>>
+<?php wp_body_open(); ?>
 <div class="site-wrap flex flex-col min-h-screen">
     <header class="bg-primary text-accent">
         <div class="container mx-auto flex items-center justify-between py-4">
