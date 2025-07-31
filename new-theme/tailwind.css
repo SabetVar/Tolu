@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Theme color palette */
+:root {
+  --color-bg: #ffffff; /* Main background */
+  --color-primary: #F3C100; /* Brand color */
+  --color-accent: #68321A; /* Strong accent (headings, links) */
+  --color-secondary: #80573B; /* Muted UI elements */
+  --color-text: #221F23; /* Body text / foreground */
+  --color-border: #E0E0E0;
+  --color-muted-bg: #F8F8F8;
+}
