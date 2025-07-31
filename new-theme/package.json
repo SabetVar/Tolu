@@ -1,0 +1,12 @@
+{
+  "name": "new-theme",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -c tailwind.config.js -i tailwind.css -o css/tailwind-output.css && tailwindcss -c tailwind.config.js -i tailwind.css -o css/tailwind-output-rtl.css --plugin tailwindcss-rtl"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.0",
+    "tailwindcss-rtl": "^0.9.0"
+  }
+}
