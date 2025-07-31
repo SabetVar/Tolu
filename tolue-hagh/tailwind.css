@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* Tailwind v4 theme customization */
+@theme {
+  --color-bg: #ffffff;
+  --color-primary: #F3C100;
+  --color-accent: #68321A;
+  --color-secondary: #80573B;
+  --color-text: #221F23;
+  --color-border: #E0E0E0;
+  --color-muted-bg: #F8F8F8;
+}

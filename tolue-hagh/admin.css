@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+#table_results.data { border:1px solid #999;}
+#table_results.data thead tr { background:#FFF;}
+#table_results.data th { border:1px solid #999; max-width:120px; overflow:hidden; font-size:11px; text-align:center; vertical-align:middle; padding:10px 2px;}
+#table_results.data tbody tr { background:#DBE8E8;}
+#table_results.data td { border:1px solid #999; max-width:100px; overflow:hidden; font-size:11px; padding:10px 2px;}
+#table_results.data td:first-child ,#table_results.data th:first-child { max-width:30px; text-align:center;}
+
+.chzn-container .chzn-drop {
+	display: none !important;
+}
+.chzn-container.chzn-with-drop .chzn-drop {
+	display: block !important;
+}
+#_wpdm_file_browser_root {     direction: ltr; text-align: left;}
+
+body .w3eden .input-group{
+	direction: ltr;
+}
+body .w3eden input[type="checkbox"]{
+	margin-right: inherit !important;
+	margin-left: 10px;
+	direction: ltr;
+}
+div#wpdm_notify {
+	left: 0 !important;
+}
+body #poststuff #post-body.columns-2{
+	margin-right: 0;
+}
+body .list .itsec-module-card-content .module-actions{
+	float: left;
+}
+body #poststuff .list .itsec-module-card h2{
+	float: right;
+}
+body .itsec-module-cards p, body .itsec-module-cards ul{
+	text-align: right;
+	direction: rtl;
+}
