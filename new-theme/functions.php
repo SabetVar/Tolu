@@ -3,6 +3,11 @@ function newtheme_setup() {
     load_theme_textdomain( 'new-theme', get_template_directory() . '/languages' );
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
+    register_nav_menus( array(
+        'main_menu'     => __( 'Main Menu', 'new-theme' ),
+        'footer_menu'   => __( 'Footer Menu', 'new-theme' ),
+        'social_footer' => __( 'Social Footer Menu', 'new-theme' ),
+    ) );
 }
 add_action( 'after_setup_theme', 'newtheme_setup' );
 
