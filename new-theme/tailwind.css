@@ -4,11 +4,11 @@
 
 /* Theme color palette */
 :root {
-  --color-bg: #ffffff; /* Main background */
-  --color-primary: #F3C100; /* Brand color */
-  --color-accent: #68321A; /* Strong accent (headings, links) */
-  --color-secondary: #80573B; /* Muted UI elements */
-  --color-text: #221F23; /* Body text / foreground */
-  --color-border: #E0E0E0;
-  --color-muted-bg: #F8F8F8;
+  --color-bg: 255 255 255; /* Main background */
+  --color-primary: 243 193 0; /* Brand color */
+  --color-accent: 104 50 26; /* Strong accent (headings, links) */
+  --color-secondary: 128 87 59; /* Muted UI elements */
+  --color-text: 34 31 35; /* Body text / foreground */
+  --color-border: 224 224 224;
+  --color-muted-bg: 248 248 248;
 }

@@ -4,13 +4,13 @@ module.exports = {
     ],
     theme: {
         colors: {
-            bg: 'var(--color-bg)',
-            primary: 'var(--color-primary)',
-            accent: 'var(--color-accent)',
-            secondary: 'var(--color-secondary)',
-            text: 'var(--color-text)',
-            border: 'var(--color-border)',
-            mutedBg: 'var(--color-muted-bg)',
+            bg: 'rgb(var(--color-bg) / <alpha-value>)',
+            primary: 'rgb(var(--color-primary) / <alpha-value>)',
+            accent: 'rgb(var(--color-accent) / <alpha-value>)',
+            secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
+            text: 'rgb(var(--color-text) / <alpha-value>)',
+            border: 'rgb(var(--color-border) / <alpha-value>)',
+            mutedBg: 'rgb(var(--color-muted-bg) / <alpha-value>)',
             transparent: 'transparent',
             current: 'currentColor'
         }

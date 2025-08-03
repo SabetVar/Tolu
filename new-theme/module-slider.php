@@ -16,7 +16,7 @@ if ($slider_query->have_posts()) :
                 <?php if (has_post_thumbnail()) : ?>
                     <?php the_post_thumbnail('full', ['class' => 'w-full h-auto']); ?>
                 <?php endif; ?>
-                <div class="caption absolute bottom-0 inset-x-0 bg-black bg-opacity-50 text-white p-4">
+                <div class="caption absolute bottom-0 inset-x-0 bg-text/60 text-bg p-4">
                     <?php the_title('<h2 class="text-lg">', '</h2>'); ?>
                     <?php the_content(); ?>
                 </div>
