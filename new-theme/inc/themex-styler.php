@@ -4,7 +4,7 @@ class ThemexStyler {
         if (function_exists('the_custom_logo') && has_custom_logo()) {
             the_custom_logo();
         } else {
-            echo '<a href="' . esc_url(home_url('/')) . '" rel="home">' . get_bloginfo('name') . '</a>';
+            echo '<a href="' . esc_url(home_url('/')) . '" rel="home">' . esc_html(get_bloginfo('name')) . '</a>';
         }
     }
 
@@ -18,14 +18,10 @@ class ThemexStyler {
     }
 
     public static function pageTitle() {
-        if (is_singular()) {
-            echo get_the_title();
-        } else {
-            echo wp_get_document_title();
-        }
+        echo esc_html(is_singular() ? get_the_title() : wp_get_document_title());
     }
 
     public static function siteCopyright() {
-        echo '&copy; ' . date('Y') . ' ' . get_bloginfo('name');
+        echo '&copy; ' . date('Y') . ' ' . esc_html(get_bloginfo('name'));
     }
 }
