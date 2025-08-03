@@ -14,9 +14,15 @@
                 <?php ThemexStyler::siteLogo(); ?>
             </div>
             <nav class="hidden md:block">
-                <?php wp_nav_menu(array('theme_location' => 'main_menu', 'container_class' => 'menu flex space-x-4')); ?>
+                <?php
+                wp_nav_menu([
+                    'theme_location' => 'main_menu',
+                    'container'      => false,
+                    'menu_class'     => 'flex space-x-4 rtl:space-x-reverse',
+                ]);
+                ?>
             </nav>
-            <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-4 rtl:space-x-reverse">
                 <div class="search-form hidden md:block">
                     <?php get_search_form(); ?>
                 </div>
