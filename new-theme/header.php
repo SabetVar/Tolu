@@ -15,6 +15,31 @@
             </div>
             <nav class="hidden md:block">
                 <?php
+                add_filter(
+                    'nav_menu_css_class',
+                    function ( $classes, $item, $args, $depth ) {
+                        if ( $args->theme_location === 'main_menu' && in_array( 'menu-item-has-children', $classes, true ) ) {
+                            $classes[] = 'group';
+                        }
+                        return $classes;
+                    },
+                    10,
+                    4
+                );
+
+                add_filter(
+                    'nav_menu_submenu_css_class',
+                    function ( $classes, $args, $depth ) {
+                        if ( $args->theme_location === 'main_menu' ) {
+                            $classes[] = 'hidden';
+                            $classes[] = 'group-hover:block';
+                        }
+                        return $classes;
+                    },
+                    10,
+                    3
+                );
+
                 wp_nav_menu([
                     'theme_location' => 'main_menu',
                     'container'      => false,
