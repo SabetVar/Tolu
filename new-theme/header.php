@@ -23,12 +23,32 @@
                 ?>
             </nav>
             <div class="flex items-center space-x-4 rtl:space-x-reverse">
-                <div class="search-form hidden md:block">
+                <button id="search-toggle" class="md:hidden" aria-controls="primary-search-form" aria-expanded="false">
+                    <?php esc_html_e('Search', 'new-theme'); ?>
+                </button>
+                <div id="primary-search-form" class="search-form hidden md:block">
                     <?php get_search_form(); ?>
                 </div>
             </div>
         </div>
     </header>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var toggle = document.getElementById('search-toggle');
+        var form = document.getElementById('primary-search-form');
+        if (toggle && form) {
+            var input = form.querySelector('input[type="search"]');
+            toggle.addEventListener('click', function () {
+                var expanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', (!expanded).toString());
+                form.classList.toggle('hidden', expanded);
+                if (!expanded && input) {
+                    input.focus();
+                }
+            });
+        }
+    });
+    </script>
     <div class="featured-content">
         <?php
         ThemexStyler::pageBackground();
