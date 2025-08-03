@@ -14,7 +14,7 @@
             <div>
                 <div class="fotnote"><?php ThemexStyler::siteCopyright(); ?></div>
                 <div class="text-sm">
-                    <a class="mx-1" href="http://sitedesignu.ir" target="_blank" rel="noreferrer">طراحی سایت <img src="<?php echo get_site_url(); ?>/site-design.png" width="20" height="20" class="inline-block" /></a>
+                    <a class="mx-1" href="http://sitedesignu.ir" target="_blank" rel="noreferrer">طراحی سایت <img src="<?php echo get_site_url(); ?>/site-design.png" width="20" height="20" class="inline-block" alt="Site design logo" /></a>
                     <a href="https://fath.pro" target="_blank">فتح</a>
                 </div>
             </div>
