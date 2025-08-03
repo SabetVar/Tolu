@@ -1,5 +1,5 @@
         </div> <!-- container -->
-    </div> <!-- main-content -->
+    </main> <!-- main-content -->
     <div class="move-top"></div>
     <div class="text-center my-4">
         <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=67961&Code=">

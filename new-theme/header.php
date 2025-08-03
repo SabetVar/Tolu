@@ -60,5 +60,5 @@
         </div>
         <?php } ?>
     </div>
-    <div class="main-content flex-1">
+    <main class="main-content flex-1">
         <div class="container mx-auto">
