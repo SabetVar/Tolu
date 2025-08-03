@@ -12,3 +12,12 @@
   --color-border: 224 224 224;
   --color-muted-bg: 248 248 248;
 }
+
+/* Hide submenus by default */
+nav .sub-menu {
+  display: none;
+}
+
+nav li:hover > .sub-menu {
+  display: block;
+}
