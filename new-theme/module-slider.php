@@ -8,7 +8,8 @@ $slider_query = new WP_Query([
 if ($slider_query->have_posts()) :
 ?>
 <div class="slider-wrapper relative overflow-hidden">
-    <ul class="slide-list flex transition-transform duration-700">
+    <div class="slides-region" aria-live="polite" aria-atomic="true">
+        <ul class="slide-list flex transition-transform duration-700">
         <?php
         while ($slider_query->have_posts()) : $slider_query->the_post();
             ?>
@@ -24,7 +25,10 @@ if ($slider_query->have_posts()) :
             <?php
         endwhile;
         ?>
-    </ul>
+        </ul>
+    </div>
+    <button class="slider-prev absolute left-2 top-1/2 -translate-y-1/2 bg-text/60 text-bg p-2" aria-label="Previous slide">&#9664;</button>
+    <button class="slider-next absolute right-2 top-1/2 -translate-y-1/2 bg-text/60 text-bg p-2" aria-label="Next slide">&#9654;</button>
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -32,14 +36,46 @@ if ($slider_query->have_posts()) :
         if (!wrapper) return;
         const list = wrapper.querySelector('.slide-list');
         const slides = wrapper.querySelectorAll('.slide');
+        const prevBtn = wrapper.querySelector('.slider-prev');
+        const nextBtn = wrapper.querySelector('.slider-next');
         let index = 0;
+        let intervalId;
+
         function showSlide(i) {
-            list.style.transform = 'translateX(' + (-i * 100) + '%)';
+            index = (i + slides.length) % slides.length;
+            list.style.transform = 'translateX(' + (-index * 100) + '%)';
+            slides.forEach(function (slide, idx) {
+                slide.setAttribute('aria-hidden', idx !== index);
+            });
         }
-        setInterval(function () {
-            index = (index + 1) % slides.length;
-            showSlide(index);
-        }, 5000);
+
+        function nextSlide() {
+            showSlide(index + 1);
+        }
+
+        function prevSlide() {
+            showSlide(index - 1);
+        }
+
+        function start() {
+            stop();
+            intervalId = setInterval(nextSlide, 5000);
+        }
+
+        function stop() {
+            clearInterval(intervalId);
+        }
+
+        wrapper.addEventListener('mouseenter', stop);
+        wrapper.addEventListener('mouseleave', start);
+        wrapper.addEventListener('focusin', stop);
+        wrapper.addEventListener('focusout', start);
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        showSlide(index);
+        start();
     });
 </script>
 <?php
